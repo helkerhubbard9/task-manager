@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Task Manager</title>
+    <link rel="stylesheet" href="css/normalize.css">
+    <link rel="stylesheet" href="css/styles.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
+</head>
+<body>
+    <header>
+      <h1>Administrador de Tareas</h1>  
+      <button disabled="true" id="hard-reset-button">Reinicio Total</button>
+    </header>
+    <main>
+        <section id="form-section">
+            <div>
+                <form action="">
+                    <div>
+                        <label for="title-input">Título*</label>
+                        <input type="text" name="title" id="title-input" placeholder="Ingrese un título">
+                    </div>
+                    <div>
+                        <label for="description-textarea">Descripción</label>
+                        <textarea name="" id="description-textarea" placeholder="Ingrese una pequeña Descripción"></textarea>
+                    </div>
+                    <div>
+                        <label for="priority-select">Prioridad</label>
+                        <select name="priority" id="priority-select">
+                            <option value="low">Baja</option>
+                            <option value="mid">Media</option>
+                            <option value="high">Alta</option>
+                        </select>
+                    </div>
+                    <button id="save-button">Guardar</button>
+                    <button id="reset-button">Reiniciar</button>
+                </form>
+            </div>
+        </section>
+        <section>
+            <div id="summary-section">
+                <h2>Resumen de Tareas</h2>
+                <div>
+                    <div>
+                        <h3 id="total-task-counter">#</h3>
+                        <h4>Total de Tareas</h4>
+                    </div>
+                    <div>
+                        <h3 id="completed-task-counter">#</h3>
+                        <h4>Tareas completadas</h4>
+                    </div>
+                    <div>
+                        <h3 id="pending-task-counter">#</h3>
+                        <h4>Tareas Pendientes</h4>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <section id="tasks-section">
+            <div>
+                <h2>Tareas</h2>
+                <div class="card__container" id="card-container">
+                    <div id="card-#">
+                        <div id="card-info">
+                            <h3 id="card-title">Título</h3>
+                            <p>Descripción</p>
+                            <p>Prioridad: <span id="priority-level"></span></p>
+                            <p>Estado: <span></span></p>
+                        </div>
+                        <div id="card-buttons">
+                            <button>Editar</button>
+                            <button>Eliminar</button>
+                            <input type="checkbox" name="" id="">
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+    <script src="js/main.js"></script>
+</body>
+</html>
