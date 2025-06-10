@@ -62,25 +62,31 @@
         <section id="tasks-section">
             <div>
                 <h2>Tareas</h2>
-                <div class="card__container" id="card-container">
-                    <div id="card-#">
-                        <div id="card-info">
-                            <h3 id="card-title">Título</h3>
-                            <p>Descripción</p>
-                            <p>Prioridad: <span id="priority-level"></span></p>
-                            <p>Estado: <span></span></p>
-                        </div>
-                        <div id="card-buttons">
-                            <button>Editar</button>
-                            <button>Eliminar</button>
-                            <input type="checkbox" name="" id="">
-                        </div>
-                    </div>
+                <div class="cards__container" id="card-container">
                 </div>
             </div>
         </section>
     </main>
+
+    <template id="card-template" hidden>
+        <div class="card" data-id="">
+            <div id="card__info">
+                <h3 class="card__title"></h3>
+                <p class="card__description"></p>
+                <p>Prioridad: <span class="card__priority"></span></p>
+                <p>Estado: <span class="card__status"></span></p>
+            </div>
+            <div class="card__buttons">
+                <button class="card__edit">Editar</button>
+                <button class="card__delete">Eliminar</button>
+                <div class="card__checkbox__container">
+                    <label>Completado</label>
+                    <input type="checkbox" class="card__checkbox">
+                </div>
+            </div>
+</div> <!--card-->
+    </template>
     <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
-    <script src="js/main.js"></script>
+    <script type="module" src="/js/main.js"></script>
 </body>
 </html>

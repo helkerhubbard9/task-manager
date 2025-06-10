@@ -67,3 +67,14 @@ h3{font-size: 2.4rem;}
 img{
     width: 100%;
 }
+
+.card{
+    width: fit-content;
+    padding: 2rem;
+}
+
+.cards__container{
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 2rem;
+}
