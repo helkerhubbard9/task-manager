@@ -24,6 +24,7 @@ body {
     font-size: 1.6rem;
     line-height: 1.5;
     margin: 0;
+    font-family: var(--fuente-principal);
 }
 
 /*
@@ -77,18 +78,30 @@ img{
     width: 100%;
 }
 
+section{
+    padding: 2rem 3rem;
+    max-height: fit-content;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+label{
+    color: var(--blanco);
+}
+
 /* header */
 .header{
     display: flex;
     justify-content: space-between;
     align-items: center;
     padding: 1rem 3rem;
+    background-color: var(--primario-oscuro);
 }
 
  /* formulario */
-.form__section{
-    padding: 3rem 0;
-    max-height: fit-content;
+.summary__section{
+    background-color: var(--primario-oscuro);    
 }
 
 .form__container{
@@ -110,6 +123,10 @@ img{
     display: flex;
     flex-direction: column; /* Esto coloca label arriba del input */
     padding: 0.5rem 0;
+}
+
+.input__field{
+    padding: 0.5rem;
 }
 
 .form__actions{
@@ -139,15 +156,20 @@ img{
 
 .counter__title{
     text-align: center;    
+    color: var(--blanco);
 }
 
 .card{
-    width: fit-content;
-    padding: 2rem;
+    width: auto;
+    padding: 2.5rem;
+    background-color: var(--primario-oscuro);
+    border-radius: 1rem;
 }
 
 .cards__container{
+    padding: 2rem;
     display: grid;
     grid-template-columns: repeat(3, 1fr);
-    gap: 2rem;
+    gap: 10rem;
+    max-width: fit-content;
 }

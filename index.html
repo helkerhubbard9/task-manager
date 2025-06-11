@@ -21,41 +21,41 @@
                 <form class="form" action="">
                     <div class="input__container">
                         <label for="title-input">Título*</label>
-                        <input type="text" name="title" id="title-input" placeholder="Ingrese un título">
+                        <input class="input__field" type="text" name="title" id="title-input" placeholder="Ingrese un título">
                     </div>
                     <div class="input__container">
                         <label for="description-textarea">Descripción</label>
-                        <textarea name="" id="description-textarea" placeholder="Ingrese una pequeña Descripción"></textarea>
+                        <textarea class="input__field" name="" id="description-textarea" placeholder="Ingrese una pequeña Descripción"></textarea>
                     </div>
                     <div class="input__container">
                         <label for="priority-select">Prioridad</label>
-                        <select name="priority" id="priority-select">
+                        <select class="input__field" name="priority" id="priority-select">
                             <option value="low">Baja</option>
                             <option value="mid">Media</option>
                             <option value="high">Alta</option>
                         </select>
                     </div>
                     <div class="form__actions">
-                        <button id="save-button">Guardar</button>
+                        <button id="save-button" disabled="true">Guardar</button>
                         <button id="reset-button">Reiniciar</button>
                     </div>
                 </form>
             </div>
         </section>
-        <section>
+        <section class="summary__section">
             <div id="summary-section">
                 <h2>Resumen de Tareas</h2>
                 <div class="summary__container">
                     <div class="counter__container">
-                        <h3 id="total-task-counter">#</h3>
+                        <h3 id="total-task-counter">0</h3>
                         <h4 class="counter__title">Total de Tareas</h4>
                     </div>
                     <div class="counter__container">
-                        <h3 id="completed-task-counter">#</h3>
+                        <h3 id="completed-task-counter">0</h3>
                         <h4 class="counter__title">Tareas completadas</h4>
                     </div>
                     <div class="counter__container">
-                        <h3 id="pending-task-counter">#</h3>
+                        <h3 id="pending-task-counter">0</h3>
                         <h4 class="counter__title">Tareas Pendientes</h4>
                     </div>
                 </div>

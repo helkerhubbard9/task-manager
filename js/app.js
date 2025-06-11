@@ -1,32 +1,32 @@
 import {StorageAppManager} from "./localstorage.js";
-import { createCard } from "./cards.js";
+import {data} from "./data.js"
+import { UI } from "./ui.js";
+import { FormUI } from "./ui/form-ui.js";
+
 export const App = {
-    data : {
-            completedTasks: 0,
-            pendingTasks: 0,
-            tasks: [],
-            globalIdCounter: 0
-    },
     init: function () {
-        this.data = StorageAppManager.loadData();
-        // rederizar los componentes del ui
+        StorageAppManager.loadData(data);
+        FormUI.initForm();
 
-
-        createCard({
-    title: "Hacer tarea",
-    description: "Terminar el proyecto de software",
-    priority: "Alta",
-    status: "Pendiente",
-    completed: false
-});
-
-createCard({
-    title: "Revisar correo",
-    description: "Responder mensajes importantes",
-    priority: "Media",
-    status: "Pendiente",
-    completed: false
-});
-
+        data.tasks.push(
+        {
+            id: data.globalIdCounter++,
+            title: "Hacer tarea",
+            description: "Terminar el proyecto de software",
+            priority: "high",
+            status: "Pendiente",
+            completed: false
+        },
+        {
+            id: data.globalIdCounter++,
+            title: "Revisar correo",
+            description: "Responder mensajes importantes",
+            priority: "mid",
+            status: "Pendiente",
+            completed: false
+        });
+ 
+        UI.renderCards(data.tasks);
+       
       }
 }
