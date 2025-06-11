@@ -5,7 +5,7 @@ export function createCard(cardData){
     $template.attr('data-id', cardId);
     $template.find('.card__title').text(cardData.title);
     $template.find('.card__description').text(cardData.description);
-    $template.find('.priority__level').text(cardData.priority);
+    $template.find('.card__priority').text(cardData.priority);
     $template.find('.card__status').text(cardData.status);
     $template.find('.card__checkbox').prop('checked', cardData.completed);
 

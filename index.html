@@ -11,23 +11,23 @@
     <link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
 </head>
 <body>
-    <header>
+    <header class="header">
       <h1>Administrador de Tareas</h1>  
       <button disabled="true" id="hard-reset-button">Reinicio Total</button>
     </header>
     <main>
-        <section id="form-section">
-            <div>
-                <form action="">
-                    <div>
+        <section class="form__section center__content" id="form-section">
+            <div class="form__container">
+                <form class="form" action="">
+                    <div class="input__container">
                         <label for="title-input">Título*</label>
                         <input type="text" name="title" id="title-input" placeholder="Ingrese un título">
                     </div>
-                    <div>
+                    <div class="input__container">
                         <label for="description-textarea">Descripción</label>
                         <textarea name="" id="description-textarea" placeholder="Ingrese una pequeña Descripción"></textarea>
                     </div>
-                    <div>
+                    <div class="input__container">
                         <label for="priority-select">Prioridad</label>
                         <select name="priority" id="priority-select">
                             <option value="low">Baja</option>
@@ -35,26 +35,28 @@
                             <option value="high">Alta</option>
                         </select>
                     </div>
-                    <button id="save-button">Guardar</button>
-                    <button id="reset-button">Reiniciar</button>
+                    <div class="form__actions">
+                        <button id="save-button">Guardar</button>
+                        <button id="reset-button">Reiniciar</button>
+                    </div>
                 </form>
             </div>
         </section>
         <section>
             <div id="summary-section">
                 <h2>Resumen de Tareas</h2>
-                <div>
-                    <div>
+                <div class="summary__container">
+                    <div class="counter__container">
                         <h3 id="total-task-counter">#</h3>
-                        <h4>Total de Tareas</h4>
+                        <h4 class="counter__title">Total de Tareas</h4>
                     </div>
-                    <div>
+                    <div class="counter__container">
                         <h3 id="completed-task-counter">#</h3>
-                        <h4>Tareas completadas</h4>
+                        <h4 class="counter__title">Tareas completadas</h4>
                     </div>
-                    <div>
+                    <div class="counter__container">
                         <h3 id="pending-task-counter">#</h3>
-                        <h4>Tareas Pendientes</h4>
+                        <h4 class="counter__title">Tareas Pendientes</h4>
                     </div>
                 </div>
             </div>
@@ -84,8 +86,9 @@
                     <input type="checkbox" class="card__checkbox">
                 </div>
             </div>
-</div> <!--card-->
+        </div> <!--card-->
     </template>
+
     <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
     <script type="module" src="/js/main.js"></script>
 </body>

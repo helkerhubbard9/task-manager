@@ -1,4 +1,4 @@
-window.StorageAppManager = {
+export const StorageAppManager = {
     loadData: function () {
         const completedTasks = localStorage.getItem('completedTasks');
         const pendingTasks = localStorage.getItem('pendingTasks');
