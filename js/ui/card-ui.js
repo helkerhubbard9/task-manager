@@ -1,5 +1,7 @@
 import { data } from "../data.js";
+import { UI } from "../ui.js";
 import { FormUI } from "./form-ui.js";
+import { Summary } from "./summary-ui.js";
 
 export const CardUI = {
     renderCard(task) {
@@ -47,11 +49,9 @@ export const CardUI = {
         return $(`.card[data-id="card-${cardId}"]`);
     },
 
-    editCard(cardId) {
-        const $card = this.getCardById(cardId);
-        // TODO: Abrir formulario de edición
-
-        const task = data.tasks.find(card => card.id === cardId);
+    editCard(taskId) {
+        const $card = this.getCardById(taskId);
+        const task = data.getTaskById(taskId);
 
         const $form = $("html").find(".form");
 
@@ -86,15 +86,21 @@ export const CardUI = {
 
             FormUI.addSaveTaskEvent();
             FormUI.resetForm(e);
+            Summary.renderCounters();
         });
     },
 
     deleteCard(cardId) {
         this.getCardById(cardId).remove();
+        data.removeTask(cardId);
+        Summary.renderCounters();
+        UI.renderSections();
     },
 
     toggleCompletion(cardId, isCompleted) {
         const $card = this.getCardById(cardId);
         $card.find('.card__status').text(isCompleted ? 'Completado' : 'Pendiente');
+        //todo logica adicional de completion de cartas
+        Summary.renderCounters();
     }
 };

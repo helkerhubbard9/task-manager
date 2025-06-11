@@ -1,5 +1,6 @@
 import { data } from '../data.js';
 import {Task} from '../models/tasks.js'
+import { UI } from '../ui.js';
 import { CardUI } from './card-ui.js';
 
 export const FormUI = {
@@ -50,15 +51,12 @@ export const FormUI = {
             const description = $form.find("#description-textarea").val();
             const priority = $form.find("#priority-select").val();
             
-            const newTask = new Task(data.globalIdCounter++, title, description, priority);
-
-            
-            data.tasks.push(newTask);
-            data.pendingTasks++;
+            const newTask = data.createTask(title, description, priority);
 
             console.log(data);
             
             CardUI.renderCard(newTask);
+            UI.renderSections();
             
             this.resetForm(e);
     },
