@@ -1,6 +1,6 @@
-import { data } from "../data.js";
+import { state } from "../state.js";
 
-export const Summary = {
+export const SummaryUI = {
     renderCounters(){
         this.renderTotalTasks();
         this.renderCompletedTasks();
@@ -8,14 +8,14 @@ export const Summary = {
     },
 
     renderTotalTasks(){
-        $("#total-task-counter").text(data.tasks.length);
+        $("#total-task-counter").text(state.tasks.length);
     },
 
     renderCompletedTasks(){
-        $("#completed-task-counter").text(data.completedTasks);
+        $("#completed-task-counter").text(state.completedTasks);
     },
 
     renderPendingTasks(){
-        $("#pending-task-counter").text(data.pendingTasks);
+        $("#pending-task-counter").text(state.pendingTasks);
     }
 }

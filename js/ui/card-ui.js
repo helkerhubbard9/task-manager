@@ -1,7 +1,7 @@
-import { data } from "../data.js";
+import { state } from "../state.js";
 import { UI } from "../ui.js";
 import { FormUI } from "./form-ui.js";
-import { Summary } from "./summary-ui.js";
+import { SummaryUI } from "./summary-ui.js";
 
 export const CardUI = {
     renderCard(task) {
@@ -51,7 +51,7 @@ export const CardUI = {
 
     editCard(taskId) {
         const $card = this.getCardById(taskId);
-        const task = data.getTaskById(taskId);
+        const task = state.getTaskById(taskId);
 
         const $form = $("html").find(".form");
 
@@ -86,21 +86,21 @@ export const CardUI = {
 
             FormUI.addSaveTaskEvent();
             FormUI.resetForm(e);
-            Summary.renderCounters();
+            SummaryUI.renderCounters();
         });
     },
 
     deleteCard(cardId) {
         this.getCardById(cardId).remove();
-        data.removeTask(cardId);
-        Summary.renderCounters();
+        state.removeTask(cardId);
+        SummaryUI.renderCounters();
         UI.renderSections();
     },
 
-    toggleCompletion(cardId, isCompleted) {
-        const $card = this.getCardById(cardId);
+    toggleCompletion(taskId, isCompleted) {
+        const $card = this.getCardById(taskId);
         $card.find('.card__status').text(isCompleted ? 'Completado' : 'Pendiente');
-        //todo logica adicional de completion de cartas
-        Summary.renderCounters();
+        state.changeTaskStatus(taskId, isCompleted);
+        SummaryUI.renderCounters();
     }
 };

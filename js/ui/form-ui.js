@@ -1,10 +1,9 @@
-import { data } from '../data.js';
-import {Task} from '../models/tasks.js'
+import { state } from '../state.js';
 import { UI } from '../ui.js';
 import { CardUI } from './card-ui.js';
 
 export const FormUI = {
-    initForm(){
+    init(){
         this.addDisableSaveButtonEvent();
         this.addResetFormEvent();
         this.addSaveTaskEvent();
@@ -51,15 +50,10 @@ export const FormUI = {
             const description = $form.find("#description-textarea").val();
             const priority = $form.find("#priority-select").val();
             
-            const newTask = data.createTask(title, description, priority);
-
-            console.log(data);
+            const newTask = state.createTask(title, description, priority);
             
             CardUI.renderCard(newTask);
             UI.renderSections();
-            
             this.resetForm(e);
-    },
-
-    editTask(){}
+    }
 }

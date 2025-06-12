@@ -1,23 +1,31 @@
-import { data } from "./data.js";
+import { state } from "./state.js";
 import { CardUI } from "./ui/card-ui.js"
-import { Summary } from "./ui/summary-ui.js";
+import { FormUI } from "./ui/form-ui.js";
+import { HardResetUI } from "./ui/hard-reset-ui.js";
+import { SummaryUI } from "./ui/summary-ui.js";
 
 export const UI = {
 
-    renderCards: function (taskList) {
+    init(){
+        FormUI.init();
+        HardResetUI.init();
+        this.renderCards(state.tasks);
+        this.renderSections();
+    },
+
+    renderCards(taskList) {
         taskList.map( card => CardUI.renderCard(card));
     },
 
-    renderSections: function (){
-        console.log(data)
-        if (data.tasks.length > 0){
+    renderSections(){
+        if (state.tasks.length > 0){
             $("#summary-section").show();
             $("#tasks-section").show();
-            Summary.renderCounters();
+            SummaryUI.renderCounters();
         } else {
             $("#summary-section").hide();
             $("#tasks-section").hide();
-            Summary.renderCounters();
+            SummaryUI.renderCounters();
         }
     },
 
