@@ -164,6 +164,16 @@ label{
     padding: 2.5rem;
     background-color: var(--primario-oscuro);
     border-radius: 1rem;
+    overflow: hidden;
+    max-width: 30rem;
+}
+
+.card__title,
+.card__description {
+    max-width: 100%;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    word-wrap: break-word;
 }
 
 .cards__container{
