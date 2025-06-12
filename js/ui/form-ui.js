@@ -55,5 +55,6 @@ export const FormUI = {
             CardUI.renderCard(newTask);
             UI.renderSections();
             this.resetForm(e);
+            UI.updateHardResetButtonState();
     }
 }

@@ -87,6 +87,7 @@ export const CardUI = {
             FormUI.addSaveTaskEvent();
             FormUI.resetForm(e);
             SummaryUI.renderCounters();
+            UI.updateHardResetButtonState;
         });
     },
 
@@ -95,6 +96,7 @@ export const CardUI = {
         state.removeTask(cardId);
         SummaryUI.renderCounters();
         UI.renderSections();
+        UI.updateHardResetButtonState;
     },
 
     toggleCompletion(taskId, isCompleted) {

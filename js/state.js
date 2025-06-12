@@ -26,6 +26,9 @@ export const state = {
                       this.tasks.splice(index, 1);
                       if (!task.completed) this.pendingTasks--;
                         else this.completedTasks--;
+                      if(this.tasks.length === 0){
+                        this.globalIdCounter = 0;  
+                      }
                 }
                 StorageAppManager.saveData(this);
         },
@@ -41,5 +44,12 @@ export const state = {
                         this.pendingTasks++;
                 }
                 StorageAppManager.saveData(this);
+        },
+
+        clearState(){
+                this.completedTasks =  0;
+                this.pendingTasks = 0;
+                this.tasks.splice(0, state.tasks.length);
+                this.globalIdCounter = 0;
         }
 };
